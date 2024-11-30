@@ -1,4 +1,4 @@
-<?php 
+<?php
 include 'partials/header.php';
 
 // Lấy bài viết theo ID từ URL
@@ -52,7 +52,23 @@ if (isset($_GET['id'])) {
         </div>
 
         <div class="singlepost__thumbnail">
-            <img src="./images/<?= htmlspecialchars($post['thumbnail']) ?>" >
+            <img src="./images/<?= htmlspecialchars($post['thumbnail']) ?>">
+            <div style="width: auto; display: flex; flex-direction: row; gap: 10px;">
+                <span><h2 style="font-size: x-large; text-decoration: underline;">Mua ngay tấm hình này: </h2></span>
+                <!-- Start- Thanh toán momo QR code button form    -->
+                <form class="" method="post" target="" enctype="application/x-www-form-urlencoded" action="xulythanhtoanmomo.php">
+                    <input type="submit" name="momo" style="font-weight: bolder;" value="Thanh toán MOMO QR code" class="btn">
+                </form>
+                <!-- End- Thanh toán momo QR code button form    -->
+                
+                <!-- Start- Thanh toán momo ATM button form    -->
+                <form class="" method="post" target="" enctype="application/x-www-form-urlencoded" action="xulythanhtoanmomo_atm.php">
+                    <input type="submit" name="momo" style="font-weight: bolder;" value="Thanh toán MOMO ATM" class="btn">
+                </form>
+                <!-- End- Thanh toán momo ATM button form    -->
+
+            </div>
+
         </div>
 
         <p><?= nl2br(htmlspecialchars($post['body'])) ?></p>
