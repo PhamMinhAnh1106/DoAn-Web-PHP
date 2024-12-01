@@ -1,3 +1,4 @@
+
 <?php
 include 'partials/header.php';
 ?>
@@ -103,3 +104,4 @@ if (isset($_GET['partnerCode'], $_GET['orderId'], $_GET['amount'], $_GET['orderI
 <?php
 include './partials/footer.php';
 ?>
+

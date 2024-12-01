@@ -51,8 +51,10 @@ $secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
 $orderInfo = "Thanh toán qua ATM MoMo";
 $amount = "100000";
 $orderId = time() . "";
+
 $redirectUrl = "http://localhost/Blogs/services.php";
 $ipnUrl = "http://localhost/Blogs/services.php";
+
 $extraData = "";
 
     $requestId = time() . "";
