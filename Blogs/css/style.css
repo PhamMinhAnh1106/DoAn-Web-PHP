@@ -556,6 +556,10 @@ footer ul a:hover {
 /* START EMPTY PAGES */
 .empty__page {
   height: 70vh;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 310b6a0f0b54e3fc91ea5626f03fd9940ef7a3ef
   display: grid;
   place-content: start;
   padding-top: 50px;

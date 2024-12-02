@@ -1,0 +1,109 @@
+@import url(reset.css);
+@import url(https://fonts.googleapis.com/css?family=Glass+Antiqua);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+body {
+    background-color:#eee;
+    font: normal 16px/1.4 'Open Sans Condensed', sans-serif;
+    color:#222;
+}
+a {
+text-decoration:none;
+    color:#fff;
+}
+*:focus { outline: 0; }
+*, *:before, *:after {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#page-wrapper {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -60px;
+  padding: 0 0 60px;
+}
+footer {
+  height: 60px;
+  line-height: 60px;
+  background-color: #222;
+    color:#ccc;
+    text-align: center;
+}
+
+.container {
+    width: 848px;
+    margin: 0 auto;
+}
+h1 {
+    text-align:center;
+    font: normal 3.5em/100% 'Glass Antiqua', cursive;
+    padding: 0 0 20px 0;
+}
+
+.button {
+    border: 0;
+    background-color:#bbb;
+    border-radius:2px;
+    padding: 15px 30px;
+    display: block;
+    clear:both;
+    margin: 0;
+    width:100%;
+    text-decoration:none;
+    color:#fff;
+    font-size: 14px;
+    position:relative;
+    cursor:pointer;
+}
+.button:hover {
+    background-color: #009d6f;
+}
+.button .icon {
+    position:absolute;
+    left: 30px;
+    top: 14px;
+}
+/* Sections */
+.main-header {
+    background-color: #222;
+    padding: 5px 0;
+    min-height: 30px;
+    margin-bottom: 10px;
+}
+
+/* Items Section */
+.items li {
+    float: left; 
+    width: 270px;
+    padding: 0 15px;
+}
+.items li + li { margin-left: 18px; }
+.items .thumb-holder {
+    border-radius:3px;
+    background-color:#ddd;
+    text-align:center;
+    padding:10px; 
+    margin-bottom:10px;
+}
+.items li h2   { float: left; margin-bottom:10px; font-size: 24px; }
+.items li span { float: right; color: #009d6f; font-weight: bold; font-size: 20px; }
+/* helpers */
+.flt-right { float: right; }
+
+.text-uc { text-transform:uppercase; }
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
