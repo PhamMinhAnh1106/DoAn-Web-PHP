@@ -47,23 +47,23 @@ if (isset($_SESSION['user-id'])) {
         <div class="container nav__container">
             <a href="<?= ROOT_URL ?>index.php" class="nav__logo"><h2 style="font-style: oblique;">WallPaper 4K</h3></a>
             <ul class="nav__items">
-                <li><a href="<?= ROOT_URL ?>blog.php" class="nav-bar-tilte-hover">Blog</a></li>
-                <li><a href="<?= ROOT_URL ?>about.php" class="nav-bar-tilte-hover">About</a></li>
-                <li><a href="<?= ROOT_URL ?>services.php" class="nav-bar-tilte-hover">Services</a></li>
-                <li><a href="<?= ROOT_URL ?>contact.php" class="nav-bar-tilte-hover">Contact</a></li>
+                <li><a href="<?= ROOT_URL ?>blog.php" class="nav-bar-tilte-hover">Bài Viết</a></li>
+                <li><a href="<?= ROOT_URL ?>services.php" class="nav-bar-tilte-hover">Lịch Sử</a></li>
+                <li><a href="<?= ROOT_URL ?>contact.php" class="nav-bar-tilte-hover">Liên Hệ</a></li>
+                <li><a href="<?= ROOT_URL ?>about.php" class="nav-bar-tilte-hover">About Us</a></li>
                 <?php if (isset($_SESSION['user-id'])) : ?>
                 
                 <li class="nav__profile">
                     <div class="avatar">
                         <img src="<?= ROOT_URL . 'images/' . $avatar['avatar'] ?>">
                     </div>
-                    <ul>
-                        <li><a href="<?= ROOT_URL ?>/admin/index.php">Dashboard</a></li>
-                        <li><a href="<?= ROOT_URL ?>logout.php">Logout</a></li>
+                    <ul style="width:200px;">
+                        <li><a href="<?= ROOT_URL ?>/admin/index.php">Quản Lý Tài Khoản</a></li>
+                        <li><a href="<?= ROOT_URL ?>logout.php">Đăng Xuất</a></li>
                     </ul>
                 </li>
                 <?php else : ?>
-                    <li><a href="<?= ROOT_URL ?>signin.php" class="nav-bar-tilte-hover">SignIn</a></li>
+                    <li><a href="<?= ROOT_URL ?>signin.php" class="nav-bar-tilte-hover">Đăng Nhập</a></li>
                 <?php endif ?>
             </ul>
             

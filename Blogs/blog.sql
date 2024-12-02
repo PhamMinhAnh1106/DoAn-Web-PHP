@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 27, 2024 at 03:14 PM
+-- Generation Time: Dec 02, 2024 at 07:36 AM
 -- Server version: 8.2.0
 -- PHP Version: 8.2.13
 
@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
-  `title` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `description` text COLLATE utf8mb4_general_ci NOT NULL,
+  `title` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -51,15 +51,42 @@ INSERT INTO `categories` (`id`, `title`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `momopay`
+--
+
+DROP TABLE IF EXISTS `momopay`;
+CREATE TABLE IF NOT EXISTS `momopay` (
+  `id_momo` int NOT NULL AUTO_INCREMENT,
+  `partner_code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `id_order` int NOT NULL,
+  `amount` varchar(50) NOT NULL,
+  `order_info` varchar(100) NOT NULL,
+  `order_type` varchar(50) NOT NULL,
+  `id_trans` int NOT NULL,
+  `pay_type` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_momo`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `momopay`
+--
+
+INSERT INTO `momopay` (`id_momo`, `partner_code`, `id_order`, `amount`, `order_info`, `order_type`, `id_trans`, `pay_type`) VALUES
+(1, 'MOMOBKUN20180529', 1733117497, '100000', 'Thanh toán qua ATM MoMo', 'momo_wallet', 2147483647, 'napas'),
+(2, 'MOMOBKUN20180529', 1733117497, '100000', 'Thanh toán qua ATM MoMo', 'momo_wallet', 2147483647, 'napas');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `posts`
 --
 
 DROP TABLE IF EXISTS `posts`;
 CREATE TABLE IF NOT EXISTS `posts` (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `body` text COLLATE utf8mb4_general_ci NOT NULL,
-  `thumbnail` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `body` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `thumbnail` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `date_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `category_id` int UNSIGNED DEFAULT NULL,
   `author_id` int UNSIGNED NOT NULL,
@@ -81,7 +108,6 @@ INSERT INTO `posts` (`id`, `title`, `body`, `thumbnail`, `date_time`, `category_
 (25, 'Artificial Intelligence and Chess', 'Artificial Intelligence and Chess: A Match Made in Heaven\r\n\r\nArtificial intelligence (AI) has made significant strides in the past few decades and has been increasingly utilized in various fields, including gaming. One game that has been a favorite among AI researchers is chess, due to its complexity and the challenge it presents.\r\n\r\nChess is a board game played between two players, where each player has 16 pieces that can move in different ways to attack and defend. The goal of the game is to checkmate the opponent&#039;s king, which means to put it in a position where it is under attack and cannot escape capture. There are over 10^120 possible moves in chess, making it impossible for humans to calculate all possible moves and outcomes.\r\n\r\nAI has been able to defeat some of the best human chess players in the world, including Garry Kasparov and Magnus Carlsen. This has been achieved through the development of various AI algorithms, such as deep learning, reinforcement learning, and genetic algorithms. These algorithms have been used to train neural networks to evaluate the board state and make optimal moves.\r\n\r\nOne notable AI algorithm is AlphaZero, developed by Google&#039;s DeepMind. AlphaZero is a self-taught AI system that learned to play chess, shogi, and Go through self-play. AlphaZero&#039;s approach is based on Monte Carlo tree search and neural networks, which allows it to evaluate the board state and search for the best moves. AlphaZero was able to defeat the world&#039;s strongest chess engines in a 100-game match, winning 28 games and drawing 72.\r\n\r\nAI has also been used to analyze chess games and provide insights into the game. Chess.com&#039;s analysis tool, powered by Stockfish (an open-source chess engine), uses AI to analyze games and provide feedback on the best moves and strategies.\r\n\r\nAI has revolutionized the game of chess, providing a new level of insight and understanding into the game. It has also opened up new possibilities for the development of AI systems that can learn to play other complex games and solve complex problems. Chess remains an important testbed for AI research and development, and the future looks bright for the continued integration of AI into the game.', '1678235660blog17.jpg', '2023-03-08 00:34:20', 9, 9, 0),
 (26, 'Exploring the World: A Journey', 'There&#039;s something magical about watching the sun set on the horizon, and taking the time to appreciate the beauty of nature. From the vibrant colors to the peaceful atmosphere, it&#039;s a moment that can leave a lasting impression. That&#039;s why we&#039;re taking you on a virtual journey around the world to experience some of the most stunning sunsets from different locations.\r\n\r\nWe begin our journey in Bali, Indonesia, where the sunsets over the ocean are truly breathtaking. With a perfect view of the sun setting behind the rolling waves, it&#039;s no wonder Bali is often referred to as the &quot;Island of the Gods&quot;. As the sky turns from bright orange to deep purple, it&#039;s easy to feel a sense of peace and awe.\r\n\r\nNext, we move on to Tokyo, Japan, where the sunset over the city skyline is a beautiful contrast to the busy streets below. From the top of a skyscraper, the sun seems to melt into the buildings, creating a surreal and almost otherworldly scene. As the sky turns from pink to orange to red, the cityscape transforms into a beautiful painting.\r\n\r\nIn Santorini, Greece, the sunset over the caldera is a sight that many consider to be one of the most beautiful in the world. The combination of the white-washed buildings and the deep blue sea creates a perfect backdrop for the sun to set against. As the sky turns from yellow to pink to purple, the caldera takes on a whole new level of beauty.\r\n\r\nWe end our journey in the American Southwest, where the sunsets over the desert are unlike anything else. The way the sun illuminates the red rock formations of Sedona, Arizona or the Grand Canyon, creates a striking contrast that has to be seen to be believed. As the sky turns from orange to red to deep blue, the landscape seems to come alive.\r\n\r\nFrom Bali to Tokyo, Santorini to the American Southwest, the world is full of stunning sunsets that leave a lasting impression. Whether you&#039;re able to witness these sights in person or just through pictures, take a moment to appreciate the beauty and wonder of nature.\r\n', '1678235943blog7.jpg', '2023-03-08 00:39:03', 1, 8, 0),
 (27, ' Loy Krathong: A Celebration of Water and Light', 'Loy Krathong is an ancient and beloved festival in Thailand that celebrates the importance of water and light in our lives. From the floating of krathongs down the river to the release of paper lanterns into the sky, this festival is a magical experience that brings people together to honor the goddess of water and let go of negative emotions.\r\n\r\nIn this festival, participants make offerings of krathongs, small baskets made of banana leaves, that are filled with flowers, candles, and incense. The krathongs are then released onto the water and floated away, symbolizing the release of negativity and the letting go of worries. Along with the krathongs, paper lanterns are released into the sky, creating a beautiful and mesmerizing sight that represents the hope for good luck and a bright future.\r\n\r\nThe history of Loy Krathong can be traced back to the Sukhothai period over 700 years ago, and it has since become a significant festival in Thailand. It&#039;s a time for people to come together, celebrate, and give thanks for the abundance of water that&#039;s so important to life in the country. Loy Krathong is also an opportunity to taste traditional foods, watch cultural performances, and take part in beauty contests, fireworks displays, and boat races.\r\n\r\nLoy Krathong is truly a celebration of water and light, and it&#039;s a beautiful and meaningful experience that should not be missed. Whether you&#039;re a local or a visitor, this festival is a chance to connect with the community, show gratitude, and experience the beauty of Thailand&#039;s waterways. So, if you&#039;re ever in Thailand during the full moon of the twelfth lunar month, join in on this unforgettable celebration of water and light.', '1678236380blog18.jpg', '2023-03-08 00:46:20', 10, 10, 0),
-(28, 'Donut Delight: A Colorful and Tasty Wonderland', 'Who doesn&#039;t love donuts? They come in all shapes, sizes, and colors, and they&#039;re the perfect treat for any time of day. Recently, I had the pleasure of visiting a place that takes donuts to a whole new level of deliciousness and creativity. Let me take you on a journey to a donut wonderland that will tantalize your taste buds and delight your senses.\r\n\r\nLocated in the heart of the city, Donut Delight is a small bakery that offers a wide variety of handmade donuts. As soon as you enter the shop, you&#039;ll be greeted by the delicious aroma of freshly baked donuts, and a colorful display of donuts of all flavors and shapes.\r\n\r\nFrom classic glazed donuts to fruity ones, there&#039;s something for everyone at Donut Delight. They offer unique and creative flavors like matcha green tea, blueberry cheesecake, and maple bacon. And if you&#039;re feeling adventurous, you can try their speciality donuts like the unicorn donut, which is a colorful and glittery masterpiece that&#039;s almost too pretty to eat.\r\n\r\nBut the real highlight of Donut Delight is their customizable donuts. You can choose from a variety of toppings like Oreos, sprinkles, nuts, and chocolate chips, and create your own unique donut. You can even get your donut personalized with your name or a special message.\r\n\r\nThe donuts at Donut Delight are not only tasty but also Instagram-worthy. The colorful and creative designs make for a perfect photo-op, and you can share your donut experience with your friends and family on social media.\r\n\r\nIn addition to the delicious donuts, Donut Delight offers a cozy and welcoming ambiance that&#039;s perfect for a quick snack or a morning coffee break. The staff is friendly and always ready to help you choose the perfect donut flavor.\r\n\r\nIf you&#039;re a donut lover or just looking for a fun and tasty experience, Donut Delight is a must-visit place. It&#039;s a journey to a colorful and tasty wonderland that will satisfy your sweet tooth and leave you craving for more. So, what are you waiting for? Head to Donut Delight and indulge in the deliciousness of handmade, creative, and customizable donuts.', '1678237190blog101.jpg', '2023-03-08 00:59:50', 1, 11, 0),
 (29, 'Bionic Arms: The Future', 'Bionic arms are one of the most exciting and promising developments in the field of prosthetics. These high-tech devices are designed to replace missing or damaged limbs, providing amputees with greater mobility and independence than ever before.\r\n\r\nBionic arms work by using sensors that detect muscle movements in the remaining portion of the amputee&#039;s limb. These sensors send signals to a small computer processor located inside the prosthetic arm. The computer then translates these signals into movements of the bionic arm, allowing the user to control the arm with their mind.\r\n\r\nOne of the key advantages of bionic arms is that they offer a greater range of motion than traditional prosthetics. With a bionic arm, amputees can perform a wide variety of tasks that were previously impossible, such as holding and manipulating delicate objects or reaching for items on high shelves.\r\n\r\nIn addition, bionic arms are designed to be more comfortable and user-friendly than traditional prosthetics. They are typically made from lightweight materials that are easy to wear for extended periods of time. Many bionic arms also feature advanced cooling systems that prevent overheating, making them much more comfortable to wear in warm weather.\r\n\r\nPerhaps the most exciting aspect of bionic arms is their potential for future development. As technology continues to advance, bionic arms are likely to become even more advanced and capable. We may one day see bionic arms that are fully integrated with the nervous system, providing users with even greater control and flexibility.\r\n\r\nIn conclusion, bionic arms represent a significant advancement in the field of prosthetics. These high-tech devices offer amputees greater mobility and independence than ever before, and they are designed to be comfortable, user-friendly, and highly capable. As technology continues to evolve, bionic arms are likely to become even more advanced and capable, offering even greater benefits to those who rely on them.\r\n', '1678237466blog2.jpg', '2023-03-08 01:04:26', 1, 5, 1);
 
 -- --------------------------------------------------------
@@ -93,13 +119,13 @@ INSERT INTO `posts` (`id`, `title`, `body`, `thumbnail`, `date_time`, `category_
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
-  `firstname` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `lastname` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `full_name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `username` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `avatar` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `firstname` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `lastname` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `full_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `username` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `avatar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `is_admin` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -115,7 +141,6 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `full_name`, `username`, `em
 (8, 'Ernest', 'Achiever', 'Ernest Achiever', 'Ernest', 'ernes@gmail.com', '$2y$10$8Uio8tlnKrPzKFbxvBmVueb3Dr7oyuRD0kmqGlvIGZPkuFgAdk79W', '1677835925avatar1.jpg', 0),
 (9, 'Aster', 'Kennedy ', 'Aster Kennedy ', 'asterkennedy', 'asterkennedy@gmail.com', '$2y$10$1VrsN/8gppd5pwurNZwX9.3Fg00LJaFt/kNNB0o1yCSe2ladshMbK', '1678235515avatar9.jpg', 0),
 (10, 'Jane', 'Supper', 'Jane Supper', 'notjane', 'not@jane.com', '$2y$10$pmLtiVTcC38W5ai07O2K6uRucCU59TE9JpUmIQuNloGhqJqzACeJC', '1678236024avatar4.jpg', 0),
-(11, 'Ant', 'Ketchup', 'Ant Ketchup', 'antketchup@123', 'antketchup@gmail.com', '$2y$10$.g/vZiXYIeq5WZx1Z4OAKO8IlqUSTAkP2rvFsdYyFLHyYeE7biboG', '1678237029avatar8.jpg', 0),
 (12, 'James', 'Moriarty', 'James Moriarty', 'jamesmoriarty@123', 'jamesmoriarty@gmail.com', '$2y$10$PrVXNnS1uODK13PtYY7uUeNK3MRbh37xitF8dzfXB.Gax7cdEi8WG', '1678249230avatar13.jpg', 0);
 
 --
