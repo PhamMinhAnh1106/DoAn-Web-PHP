@@ -250,6 +250,12 @@ nav button {
 /* END FEATURED */
 
 /* START POSTS */
+.lichsupage{
+  display: grid;
+  background-color: rgb(94, 93, 93);
+  padding-left: 60px;
+  padding-right: 60px;
+}
 
 .posts__container {
   display: grid;
@@ -555,15 +561,12 @@ footer ul a:hover {
 
 /* START EMPTY PAGES */
 .empty__page {
-  height: 70vh;
-<<<<<<< HEAD
-=======
-
->>>>>>> 310b6a0f0b54e3fc91ea5626f03fd9940ef7a3ef
-  display: grid;
+  /* height: 70vh; */
+  display: block;
   place-content: start;
   padding-top: 50px;
   padding-left: 50px;
+  padding-bottom: 10px;
 }
 /* END EMPTY PAGES */
 
